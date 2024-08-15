@@ -36,7 +36,15 @@ body {
 
 
 h1.title {
-    font: 700 3rem/1.5 var(--ff-title);
+    font: 700 2.5rem/1.5 var(--ff-title);
     color: var(--text-primary);
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    all: unset;
+}
