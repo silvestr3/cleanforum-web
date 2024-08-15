@@ -9,10 +9,14 @@
 :root {
     --bg-primary: #121214;
     --bg-secondary: #202024;
+    --bg-tertiary: #27272b;
 
     --text-primary: #F7F7FA;
     --text-secondary: #a8a8b3;
     --text-tertiary: #737380;
+
+    --action-primary: #058C42;
+    --action-secondary: #12a54d;
 
     --ff-title: 'Jersey 10', sans-serif;
     --ff-text: 'Jakarta', sans-serif;
@@ -45,6 +49,6 @@ a {
     text-decoration: none;
 }
 
-button {
+button, input {
     all: unset;
 }
