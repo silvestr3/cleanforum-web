@@ -1,5 +1,5 @@
 <script>
-	import Bell from '$icons/Bell.svelte';
+	import Bell from 'lucide-svelte/icons/bell';
 </script>
 
 <header>
@@ -9,7 +9,7 @@
 
 	<div>
 		<button>
-			<Bell />
+			<Bell size={18} />
 		</button>
 		<img src="https://github.com/silvestr3.png" alt="Profile" />
 	</div>
