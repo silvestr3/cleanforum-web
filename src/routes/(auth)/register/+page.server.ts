@@ -1,5 +1,5 @@
 import { env } from '$lib/env/index.js';
-import { redirect, type RequestEvent } from '@sveltejs/kit';
+import { fail, redirect, type RequestEvent } from '@sveltejs/kit';
 
 export const actions = {
 	default: async ({ request }: RequestEvent) => {
@@ -21,14 +21,13 @@ export const actions = {
 		});
 
 		if (result.status === 201) {
-			redirect(302, '/login?created');
+			return redirect(302, '/login?created');
 		} else {
 			const { message } = await result.json();
 
-			return {
-				status: result.status,
+			return fail(result.status, {
 				message
-			};
+			});
 		}
 	}
 };

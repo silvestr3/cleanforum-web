@@ -42,6 +42,7 @@
     & button {
         background-color: var(--action-primary);
         padding: 0.5rem 2rem;
+        min-height: 2rem;
         border-radius: 8px;
         cursor: pointer;
         margin-bottom: 1rem;
@@ -51,6 +52,10 @@
         &:hover {
             background-color: var(--action-secondary);
         }
+
+        & svg {
+            animation: spin 1000ms infinite linear;
+        }
     }
 
     & a {
@@ -59,5 +64,16 @@
         &:hover {
             color: var(--text-primary);
         }
+    }
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
