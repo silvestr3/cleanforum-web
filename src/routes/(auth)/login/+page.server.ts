@@ -25,7 +25,7 @@ export const actions: Actions = {
 			cookies.set('access_token', access_token, {
 				path: '/',
 				httpOnly: true,
-				sameSite: true,
+				sameSite: 'strict',
 				secure: true
 			});
 
