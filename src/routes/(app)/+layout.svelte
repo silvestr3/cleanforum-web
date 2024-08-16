@@ -3,3 +3,4 @@
 </script>
 
 <Header />
+<slot />
