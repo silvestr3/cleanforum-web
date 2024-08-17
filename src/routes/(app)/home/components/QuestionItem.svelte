@@ -1,5 +1,5 @@
 <script>
-	import { CircleCheck, CircleHelp } from 'lucide-svelte';
+	import QuestionAnsweredIcon from './QuestionAnsweredIcon.svelte';
 
 	export let question;
 </script>
@@ -10,11 +10,7 @@
 	</div>
 	<div class="question-info">
 		<h3>
-			{#if question.bestAnswer}
-				<CircleCheck size={18} opacity={'60%'} color="green" />
-			{:else}
-				<CircleHelp size={18} opacity={'60%'} color="yellow" />
-			{/if}
+			<QuestionAnsweredIcon isQuestionAnswered={question.bestAnswer} />
 			{question.title}
 		</h3>
 		<span>{question.authorName} <time>{question.createdAt}</time></span>
