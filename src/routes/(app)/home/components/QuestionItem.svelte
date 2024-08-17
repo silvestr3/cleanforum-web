@@ -5,7 +5,7 @@
 </script>
 
 <a href={`/question/${question.slug}`} class="question-item">
-	<div class="img-container">
+	<div class="avatar-container">
 		<img src="https://github.com/silvestr3.png" alt="Author profile" />
 	</div>
 	<div class="question-info">
@@ -13,7 +13,10 @@
 			<QuestionAnsweredIcon isQuestionAnswered={question.bestAnswer} />
 			{question.title}
 		</h3>
-		<span>{question.authorName} <time>{question.createdAt}</time></span>
+		<span class="secondary">
+			{question.authorName}
+			<time class="tertiary">{question.createdAt}</time></span
+		>
 	</div>
 </a>
 
@@ -53,22 +56,6 @@
 			transform-origin: top;
 		}
 
-		& .img-container {
-			width: 3rem;
-			background-color: white;
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 2px;
-
-			& img {
-				width: 100%;
-				aspect-ratio: 1/1;
-				border-radius: inherit;
-			}
-		}
-
 		& .question-info {
 			display: flex;
 			flex-direction: column;
@@ -81,15 +68,8 @@
 				gap: 0.5rem;
 			}
 
-			& span {
-				font: 500 0.88rem/1 var(--ff-text);
-				color: var(--text-secondary);
-
-				& time {
-					font: 500 0.75rem/1 var(--ff-text);
-					color: var(--text-tertiary);
-					margin-left: 0.5rem;
-				}
+			& span time {
+				margin-left: 0.5rem;
 			}
 		}
 	}

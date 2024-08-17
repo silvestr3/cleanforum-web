@@ -56,3 +56,38 @@ button, input {
 ul, li{
     list-style: none;
 }
+
+.avatar-container {
+    width: 3rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+
+    & img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: inherit;
+        border: solid 1px var(--bg-primary);
+    }
+}
+
+.dialog {
+    background-color: var(--bg-secondary);
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
+	position: relative;
+
+    &::before {
+        content: '';
+        background-color: inherit;
+        width: 20px;
+        height: 20px;
+        left: -0.3rem;
+        top: 0.75rem;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+}
