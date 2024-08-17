@@ -1,4 +1,4 @@
-import { redirect, type Handle } from '@sveltejs/kit';
+import { redirect, type Handle, type HandleFetch } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const { url, cookies } = event;
@@ -10,11 +10,20 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	if (privateRoutes.includes(accessedBaseRoute)) {
 		if (!apiToken) {
-			throw redirect(301, '/login');
+			return redirect(302, '/login');
 		}
 	}
 
 	const response = await resolve(event);
 
 	return response;
+};
+
+export const handleFetch: HandleFetch = async ({ fetch, request, event }) => {
+	const { cookies } = event;
+	const apiToken = cookies.get('access_token');
+
+	request.headers.set('Authorization', `Bearer ${apiToken}`);
+
+	return fetch(request);
 };
