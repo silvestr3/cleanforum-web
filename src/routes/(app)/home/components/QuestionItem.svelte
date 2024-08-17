@@ -4,7 +4,7 @@
 	export let question;
 </script>
 
-<li class="question-item">
+<a href={`/question/${question.slug}`} class="question-item">
 	<div class="img-container">
 		<img src="https://github.com/silvestr3.png" alt="Author profile" />
 	</div>
@@ -15,10 +15,10 @@
 		</h3>
 		<span>{question.authorName} <time>{question.createdAt}</time></span>
 	</div>
-</li>
+</a>
 
 <style>
-	li.question-item {
+	a.question-item {
 		width: 100%;
 		height: 5rem;
 		background-color: var(--bg-secondary);

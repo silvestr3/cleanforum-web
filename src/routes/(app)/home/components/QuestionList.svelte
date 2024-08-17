@@ -12,7 +12,9 @@
 	</button>
 	<ul>
 		{#each questions as question}
-			<QuestionItem {question} />
+			<li>
+				<QuestionItem {question} />
+			</li>
 		{/each}
 	</ul>
 </div>
