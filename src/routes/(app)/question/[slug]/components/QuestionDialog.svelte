@@ -18,6 +18,11 @@
 	<div class="question-content">
 		<span>{question.content}</span>
 	</div>
+
+	<div class="action-buttons">
+		<button class="comment">Comment</button>
+		<button class="answer">Answer</button>
+	</div>
 </article>
 
 <style>
@@ -41,6 +46,38 @@
 			& span {
 				display: inline-block;
 				margin-block: 1.75rem;
+			}
+		}
+
+		& .action-buttons {
+			display: flex;
+			align-items: center;
+			justify-content: end;
+			gap: 0.5rem;
+			margin-top: 1rem;
+
+			& button {
+				text-transform: uppercase;
+				font-size: smaller;
+				padding: 0.5rem 1rem;
+				border-radius: 8px;
+				cursor: pointer;
+
+				&.answer {
+					background-color: var(--action-primary);
+
+					&:hover {
+						background-color: var(--action-secondary);
+					}
+				}
+
+				&.comment {
+					background-color: var(--bg-primary);
+
+					&:hover {
+						background-color: var(--bg-tertiary);
+					}
+				}
 			}
 		}
 	}

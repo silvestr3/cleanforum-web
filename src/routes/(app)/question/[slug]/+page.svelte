@@ -6,12 +6,12 @@
 	let { question } = data;
 </script>
 
-<div class="question-container">
+<div class="thread-container">
 	<QuestionDialog {question} />
 </div>
 
 <style>
-	div.question-container {
+	div.thread-container {
 		width: min(900px, 90%);
 		padding-block: 4rem;
 		margin-inline: auto;
