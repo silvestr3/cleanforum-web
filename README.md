@@ -1,6 +1,6 @@
 # Clean Forum - Web Client
 
-Forum application web client built with SvelteKit.
+Forum application web client built with SvelteKit (Under construction).
 
 ## How to start
 
