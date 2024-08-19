@@ -1,11 +1,10 @@
 <script>
+	import Avatar from '$components/Avatar.svelte';
 	import QuestionAnsweredIcon from '../../../home/components/QuestionAnsweredIcon.svelte';
 	export let question;
 </script>
 
-<div class="avatar-container">
-	<img src="https://github.com/silvestr3.png" alt="" />
-</div>
+<Avatar />
 <article class="dialog">
 	<span class="secondary">{question.author}</span>
 	<span class="tertiary">{question.createdAt}</span>
