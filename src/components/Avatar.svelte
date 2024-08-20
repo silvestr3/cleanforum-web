@@ -15,6 +15,7 @@
 <style>
 	.avatar-container {
 		width: 3rem;
+		height: 3rem;
 		background-color: white;
 		border-radius: 50%;
 		display: flex;
@@ -26,6 +27,7 @@
 		& img,
 		svg {
 			width: 100%;
+			height: 100%;
 			aspect-ratio: 1/1;
 			border-radius: inherit;
 			border: solid 1px var(--bg-primary);

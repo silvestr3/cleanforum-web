@@ -1,13 +1,12 @@
 <script>
+	import Avatar from '$components/Avatar.svelte';
 	import QuestionAnsweredIcon from './QuestionAnsweredIcon.svelte';
 
 	export let question;
 </script>
 
 <a href={`/question/${question.slug}`} class="question-item">
-	<div class="avatar-container">
-		<img src="https://github.com/silvestr3.png" alt="Author profile" />
-	</div>
+	<Avatar />
 	<div class="question-info">
 		<h3>
 			<QuestionAnsweredIcon isQuestionAnswered={question.bestAnswer} />
