@@ -1,7 +1,11 @@
 <script>
 	import Avatar from '$components/Avatar.svelte';
+	import Editor from '$components/Editor.svelte';
 
 	export let name;
+
+	let content = '';
+	$: console.log(content);
 </script>
 
 <Avatar />
@@ -9,7 +13,8 @@
 	<span class="secondary">{name}</span>
 	<form method="POST">
 		<input type="text" name="title" placeholder="Title" />
-		<textarea name="content" placeholder="Describe your problem"></textarea>
+		<input type="text" name="content" bind:value={content} class="hidden" />
+		<Editor bind:value={content} />
 
 		<button class="btn-action" type="submit">Publish</button>
 	</form>
@@ -26,14 +31,17 @@
 			gap: 1rem;
 			margin-inline: auto;
 
-			& input,
-			& textarea {
+			& input {
 				background-color: var(--bg-primary);
 				padding-inline: 1rem;
 				border-radius: 8px;
 				height: 2.5rem;
 				border: solid 2px transparent;
 				transition: border 200ms;
+
+				&.hidden {
+					display: none;
+				}
 
 				&:focus,
 				&:hover {
@@ -44,13 +52,6 @@
 				&::placeholder {
 					color: var(--text-tertiary);
 				}
-			}
-
-			& textarea {
-				height: 20rem;
-				padding: 1rem;
-				color: var(--text-primary);
-				font: inherit;
 			}
 		}
 	}
