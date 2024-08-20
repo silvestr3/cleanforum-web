@@ -57,6 +57,24 @@ ul, li{
     list-style: none;
 }
 
+.btn-action {
+    background-color: var(--action-primary);
+    padding: 0.5rem 1rem;
+    min-height: 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+        background-color: var(--action-secondary);
+    }
+}
+
 .dialog {
     background-color: var(--bg-secondary);
     border-radius: 0.5rem;

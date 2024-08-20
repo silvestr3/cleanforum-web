@@ -6,10 +6,10 @@
 </script>
 
 <div class="question-list">
-	<button>
+	<a class="btn-action" href="/question/create">
 		<PlusIcon />
 		New question
-	</button>
+	</a>
 	<ul>
 		{#each questions as question}
 			<li>
@@ -30,24 +30,6 @@
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
-		}
-
-		& button {
-			background-color: var(--action-primary);
-			padding: 0.5rem 1rem;
-			min-height: 2rem;
-			border-radius: 8px;
-			cursor: pointer;
-			text-align: center;
-			width: fit-content;
-			margin-bottom: 1rem;
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-
-			&:hover {
-				background-color: var(--action-secondary);
-			}
 		}
 	}
 </style>
