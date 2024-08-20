@@ -7,7 +7,7 @@
 <Avatar />
 <section class="dialog">
 	<span class="secondary">{name}</span>
-	<form>
+	<form method="POST">
 		<input type="text" name="title" placeholder="Title" />
 		<textarea name="content" placeholder="Describe your problem"></textarea>
 
