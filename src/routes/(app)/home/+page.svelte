@@ -1,8 +1,15 @@
 <script>
+	import { page } from '$app/stores';
+	import { toast } from 'svelte-sonner';
 	import QuestionList from './components/QuestionList.svelte';
 	import Search from './components/Search.svelte';
 
 	export let data;
+
+	let isCreatedNewQuestion = $page.url.searchParams.get('created');
+	$: if (isCreatedNewQuestion !== null) {
+		toast.success('Question created successfully!');
+	}
 </script>
 
 <div class="home-container">

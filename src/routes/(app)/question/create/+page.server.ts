@@ -26,7 +26,7 @@ export const actions: Actions = {
 		});
 
 		if (createQuestionResult.status === 201) {
-			return redirect(302, '/home');
+			return redirect(302, '/home?created');
 		} else {
 			const data = await createQuestionResult.json();
 			return fail(createQuestionResult.status, { message: data });
