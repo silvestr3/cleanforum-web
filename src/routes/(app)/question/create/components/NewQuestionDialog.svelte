@@ -1,17 +1,45 @@
 <script>
+	import { enhance } from '$app/forms';
+	import { goto } from '$app/navigation';
 	import Avatar from '$components/Avatar.svelte';
 	import Editor from '$components/Editor.svelte';
+	import { toast } from 'svelte-sonner';
 
 	export let name;
 
 	let content = '';
-	$: console.log(content);
 </script>
 
 <Avatar />
 <section class="dialog">
 	<span class="secondary">{name}</span>
-	<form method="POST">
+	<form
+		method="POST"
+		use:enhance={({ formData, cancel }) => {
+			const title = formData.get('title');
+			const content = formData.get('content');
+
+			if (title === '' || content === '') {
+				toast.warning('Fill both fields to create a question!');
+				cancel();
+			}
+
+			return ({ result }) => {
+				const { type } = result;
+
+				if (type === 'failure') {
+					const { data } = result;
+					const message = data ? String(data.message) : 'Unexpected error';
+
+					toast.error(message);
+				}
+
+				if (type === 'redirect') {
+					goto(result.location);
+				}
+			};
+		}}
+	>
 		<input type="text" name="title" placeholder="Title" />
 		<input type="text" name="content" bind:value={content} class="hidden" />
 		<Editor bind:value={content} />
