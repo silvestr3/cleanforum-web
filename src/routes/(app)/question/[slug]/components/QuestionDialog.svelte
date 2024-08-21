@@ -1,7 +1,10 @@
 <script>
 	import Avatar from '$components/Avatar.svelte';
 	import QuestionAnsweredIcon from '../../../home/components/QuestionAnsweredIcon.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
 	export let question;
+
+	let questionContent = question.content.replace(/<br>/g, '\n\n');
 </script>
 
 <Avatar />
@@ -15,7 +18,7 @@
 	</div>
 
 	<div class="question-content">
-		<span>{question.content}</span>
+		<SvelteMarkdown source={questionContent} />
 	</div>
 
 	<div class="action-buttons">
@@ -40,12 +43,8 @@
 
 		& div.question-content {
 			border-block: solid 1px rgba(115, 115, 128, 0.3);
+			padding-block: 1.75rem;
 			margin-top: 2rem;
-
-			& span {
-				display: inline-block;
-				margin-block: 1.75rem;
-			}
 		}
 
 		& .action-buttons {

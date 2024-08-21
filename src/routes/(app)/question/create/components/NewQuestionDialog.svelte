@@ -7,6 +7,9 @@
 
 	export let name;
 
+	let serializedContent = '';
+	$: serializedContent = content.replace(/(?:\r\n|\r|\n)/g, '<br><br>');
+
 	let content = '';
 </script>
 
@@ -41,7 +44,7 @@
 		}}
 	>
 		<input type="text" name="title" placeholder="Title" />
-		<input type="text" name="content" bind:value={content} class="hidden" />
+		<input type="text" name="content" bind:value={serializedContent} class="hidden" />
 		<Editor bind:value={content} />
 
 		<button class="btn-action" type="submit">Publish</button>
